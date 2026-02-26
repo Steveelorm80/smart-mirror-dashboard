@@ -12,9 +12,17 @@ frontend/dist/
 # ===============================
 # Environment variables (CRITICAL)
 # ===============================
+
+
+# Ignore real environment files
 .env
-.env.*
-config/.env
+.env.local
+.env.development
+.env.production
+config
+
+# But allow example template
+!.env.example
 
 # ===============================
 # Logs
