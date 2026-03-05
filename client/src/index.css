@@ -15,7 +15,8 @@ html, body {
   background: linear-gradient(135deg, #0f2027, #1c2c3a, #233d4d);
   background-size: 300% 300%;
   animation: gradientShift 20s ease infinite;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 @keyframes gradientShift {
@@ -42,14 +43,7 @@ html, body {
 /* DASHBOARD GRID */
 /* ============================= */
 
-/* .dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: auto 1fr 1fr;
-  gap: 20px;
-  min-height: calc(100vh - 60px);
-  padding: 25px 60px 40px 60px;
-} */
+
  .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
@@ -432,4 +426,143 @@ html, body {
 
 .city-select__dropdown-indicator {
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+/* ====================================== */
+/* RESPONSIVE DESIGN */
+/* ====================================== */
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 1024px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "clock weather"
+      "crypto joke"
+      "news news";
+      
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .news-widget {
+    grid-column: auto;
+    grid-row: auto;
+    max-height: 350px;
+  }
+
+  .clock {
+    font-size: 3.5rem;
+  }
+
+  .weather-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header-bar {
+    padding: 15px 20px;
+  }
+
+  .header-right {
+    width: 220px;
+  }
+
+  .insight-card {
+    width: 75%;
+  }
+
+}
+
+
+/* ---------- MOBILE PHONES ---------- */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "clock"
+      "weather"
+      "crypto"
+      "joke"
+      "news";
+
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .widget {
+    padding: 15px;
+  }
+
+  .clock {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .greeting {
+    font-size: 0.75rem;
+  }
+
+  .date {
+    font-size: 0.9rem;
+  }
+
+  .weather-row {
+    gap: 10px;
+  }
+
+  .weather-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .crypto-row {
+    font-size: 0.9rem;
+  }
+
+  .news-widget {
+    max-height: 300px;
+  }
+
+  .header-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .insight-card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .insight-text {
+    font-size: 0.9rem;
+  }
+
+  .footer-bar {
+    height: 50px;
+    font-size: 0.65rem;
+  }
+
 }
