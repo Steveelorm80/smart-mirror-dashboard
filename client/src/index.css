@@ -1,0 +1,435 @@
+/* ============================= */
+/* GLOBAL RESET + BACKGROUND */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #0f2027, #1c2c3a, #233d4d);
+  background-size: 300% 300%;
+  animation: gradientShift 20s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================= */
+/* APP LAYOUT */
+/* ============================= */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* ============================= */
+/* DASHBOARD GRID */
+/* ============================= */
+
+/* .dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 20px;
+  min-height: calc(100vh - 60px);
+  padding: 25px 60px 40px 60px;
+} */
+ .dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto auto;
+  gap: 25px;
+  padding: 1px 40px;
+
+  grid-template-areas:
+    "clock weather news"
+    "crypto joke news";
+}
+
+/* Header spans full width */
+/* .header-widget {
+  grid-column: 1 / 4;
+} */
+ .header-widget {
+  grid-column: 1 / 4;
+
+  padding: 14px 30px;   /* smaller height */
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: left;
+   box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.header-widget h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* News spans 2 rows */
+.news-widget {
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
+  overflow-y: auto;
+}
+
+/* ============================= */
+/* GLASS WIDGET STYLE */
+/* ============================= */
+
+.widget {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding: 18px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35),
+    inset 0 0 18px rgba(255, 255, 255, 0.04);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ============================= */
+/* TYPOGRAPHY */
+/* ============================= */
+
+.widget h2,
+.widget h3 {
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.widget p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ============================= */
+/* CLOCK */
+/* ============================= */
+
+.clock-widget {
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  letter-spacing: 3px;
+}
+
+.clock {
+  font-size: 5rem;
+  font-weight: 200;
+  letter-spacing: 4px;
+  margin: 10px 0;
+}
+
+.date {
+  font-size: 1.05rem;
+  opacity: 0.7;
+}
+
+/* ============================= */
+/* WEATHER */
+/* ============================= */
+
+.weather-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+/* ============================= */
+/* CRYPTO */
+/* ============================= */
+
+.crypto-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.crypto-row strong {
+  font-weight: 600;
+  color: #00ffc3;
+}
+
+/* ============================= */
+/* NEWS */
+/* ============================= */
+
+.news-widget {
+  justify-content: flex-start;
+}
+
+.news-widget p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+/* Custom scrollbar */
+.news-widget::-webkit-scrollbar {
+  width: 6px;
+}
+
+.news-widget::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* JOKE */
+/* ============================= */
+
+.joke-widget p {
+  font-size: 0.95rem;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+/* .footer-bar {
+  text-align: center;
+  padding: 14px 0;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+} */
+ .footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================= */
+/* LOADING */
+/* ============================= */
+
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.bitcoin-widget,
+.joke-widget,
+.news-widget {
+  justify-content: flex-start;
+}
+
+/* ============================= */
+/* AI INSIGHT OVERLAY */
+/* ============================= */
+
+.floating-insight {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.55);
+
+  animation: fadeInsight 10s ease forwards;
+}
+
+.insight-card {
+  /* background: rgba(255, 255, 255, 0.06); */
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+
+  padding: 45px 55px;
+  width: 55%;
+  max-width: 750px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 25px rgba(255, 255, 255, 0.04);
+
+  text-align: left;
+
+}
+
+.insight-title {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: 0.55;
+  margin-bottom: 20px;
+}
+
+.insight-text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  color: rgba(255,255,255,0.94);
+}
+
+@keyframes fadeInsight {
+  0% { opacity: 0; transform: translateY(20px); }
+  8% { opacity: 1; transform: translateY(0); }
+  92% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.header-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+  margin-bottom: 20px;
+
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  width: 300px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ========================= */
+/* CITY SEARCH GLASS STYLE   */
+/* ========================= */
+
+.city-select__control {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  min-height: 40px;
+}
+
+.city-select__value-container {
+  color: white !important;
+}
+
+.city-select__input-container {
+  color: white !important;
+}
+
+.city-select__placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.city-select__single-value {
+  color: white !important;
+}
+
+/* dropdown menu */
+
+.city-select__menu {
+  background: rgba(30, 30, 30, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+}
+
+.city-select__menu-list {
+  background: transparent !important;
+}
+
+/* dropdown options */
+
+.city-select__option {
+  background: transparent !important;
+  color: white !important;
+}
+
+.city-select__option--is-focused {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.city-select__option--is-selected {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* remove separator */
+
+.city-select__indicator-separator {
+  display: none;
+}
+
+/* dropdown arrow */
+
+.city-select__dropdown-indicator {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

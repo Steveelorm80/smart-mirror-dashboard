@@ -4,23 +4,24 @@ import { getJoke } from "../services/jokeService.js";
 import { getNews } from "../services/newsService.js";
 import { getAIInsight } from "../services/aiService.js";
 
-let cache = {
-  data: null,
-  timestamp: null,
-};
+let cache = {};
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 export const getDashboardData = async (req, res) => {
   try {
+    const city = req.query.city || "London";
     const now = Date.now();
 
-    if (cache.data && now - cache.timestamp < CACHE_DURATION) {
-      console.log("Serving from cache ✅");
-      return res.json(cache.data);
+    if (
+      cache[city] &&
+      now - cache[city].timestamp < CACHE_DURATION
+    ) {
+      console.log(`Serving ${city} from cache ✅`);
+      return res.json(cache[city].data);
     }
 
-    console.log("Fetching fresh data 🔄");
+    console.log(`Fetching fresh data for ${city} 🔄`);
 
     // const [weather, crypto, joke, news] = await Promise.all([
     //   getWeather(),
@@ -31,13 +32,15 @@ export const getDashboardData = async (req, res) => {
 
     let weather, crypto, joke, news;
 
-    try {
-      weather = await getWeather();
-      console.log("Weather OK");
-    } catch (err) {
-      console.log("Weather FAILED", err.response?.status);
-    }
+   try {
+  const city = req.query.city || "London";
 
+  weather = await getWeather(city);
+
+  console.log("Weather OK:", city);
+} catch (err) {
+  console.log("Weather FAILED", err.response?.status);
+}
     try {
       crypto = await getCrypto();
       console.log("Crypto OK");
@@ -75,10 +78,10 @@ export const getDashboardData = async (req, res) => {
       aiInsight,
     };
 
-    cache = {
-      data: responseData,
-      timestamp: now,
-    };
+   cache[city] = {
+  data: responseData,
+  timestamp: now,
+};
 
     res.json(responseData);
   } catch (error) {

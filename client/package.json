@@ -12,8 +12,10 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
     "axios": "^1.13.5",
+    "lottie-react": "^2.4.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-select": "^5.10.2",
     "vite": "^6.4.1"
   },
   "devDependencies": {
