@@ -49,7 +49,8 @@ function App() {
 
           <WeatherWidget weather={data.weather} />
 
-         <CryptoWidget crypto={data.crypto} />
+         {/* <CryptoWidget crypto={data.crypto} /> */}
+         {data.crypto && <CryptoWidget crypto={data.crypto} />}
 
          <JokeWidget joke={data.joke} />
 
