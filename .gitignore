@@ -19,7 +19,6 @@ frontend/dist/
 .env.local
 .env.development
 .env.production
-config
 
 # But allow example template
 !.env.example
