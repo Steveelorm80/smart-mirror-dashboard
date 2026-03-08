@@ -21,7 +21,8 @@ function App() {
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get(`/api/dashboard?city=${city}`)
+        // .get(`/api/dashboard?city=${city}`)
+        .get(`https://smart-mirror-api.onrender.com/api/dashboard?city=${city}`)
         .then((res) => setData(res.data))
         .catch((err) => console.error(err));
     };
