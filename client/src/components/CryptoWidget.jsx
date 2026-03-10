@@ -1,4 +1,8 @@
 const CryptoWidget = ({ crypto }) => {
+  if (!crypto) {
+    return null;
+  }
+
   return (
     <div className="widget bitcoin-widget">
       <h3>Crypto Market</h3>

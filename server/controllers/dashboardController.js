@@ -41,12 +41,17 @@ export const getDashboardData = async (req, res) => {
 } catch (err) {
   console.log("Weather FAILED", err.response?.status);
 }
-    try {
-      crypto = await getCrypto();
-      console.log("Crypto OK");
-    } catch (err) {
-      console.log("Crypto FAILED", err.response?.status);
-    }
+try {
+  crypto = await getCrypto();
+  console.log("Crypto OK");
+} catch (err) {
+  console.log("Crypto FAILED", err.response?.status);
+
+  crypto = {
+    bitcoin: null,
+    ethereum: null
+  };
+}
 
     try {
       joke = await getJoke();
