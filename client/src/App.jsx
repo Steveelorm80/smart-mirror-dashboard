@@ -156,8 +156,8 @@ useEffect(() => {
       {/* FOOTER */}
       <footer className="footer-bar">
         SMART MIRROR • AI POWERED DASHBOARD •
-        Developed by 
-        STEPHEN KWAKU POMETSEY
+         <span className="author">Developed by Stephen Kwaku Pometsey</span>
+       
       </footer>
 
     </div>
