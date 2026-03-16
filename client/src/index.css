@@ -48,7 +48,7 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: auto auto;
-  gap: 25px;
+  gap: 20px;
   padding: 1px 40px;
 
   grid-template-areas:
@@ -63,7 +63,7 @@ html, body {
  .header-widget {
   grid-column: 1 / 4;
 
-  padding: 14px 30px;   /* smaller height */
+  padding: 12px 20px;   /* smaller height */
   border-radius: 16px;
 
   background: rgba(255, 255, 255, 0.05);
@@ -210,6 +210,9 @@ html, body {
   border-radius: 10px;
 }
 
+
+
+
 /* ============================= */
 /* JOKE */
 /* ============================= */
@@ -222,15 +225,7 @@ html, body {
 /* FOOTER */
 /* ============================= */
 
-/* .footer-bar {
-  text-align: center;
-  padding: 14px 0;
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  color: rgba(255,255,255,0.5);
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.05);
-} */
+
  .footer-bar {
   position: fixed;
   bottom: 0;
@@ -482,6 +477,7 @@ html, body {
 }
 
 
+
 /* ---------- MOBILE PHONES ---------- */
 
 @media (max-width: 600px) {
@@ -577,4 +573,25 @@ html, body {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.weather-temp {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.weather-desc {
+  margin-top: 1px;
+  opacity: 0.8;
+}
+
+.weather-city {
+  opacity: 0.7;
 }

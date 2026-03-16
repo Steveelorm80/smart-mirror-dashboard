@@ -38,22 +38,28 @@ const WeatherWidget = ({ weather }) => {
   };
 
   return (
-    <div className="widget weather-widget">
+  <div className="widget weather-widget">
 
-      <h3>Weather</h3>
+    <h3>Weather</h3>
+
+    <div className="weather-main">
 
       <div className="weather-icon">
         {getIcon()}
       </div>
 
-      <h2>{Math.round(weather.temperature)}°C</h2>
-
-      <p>{weather.description}</p>
-
-      <p>{weather.city}</p>
+      <div className="weather-temp">
+        {Math.round(weather.temperature)}°C
+      </div>
 
     </div>
-  );
+
+    <p className="weather-desc">{weather.description}</p>
+
+    <p className="weather-city">{weather.city}</p>
+
+  </div>
+);
 };
 
 export default WeatherWidget;
