@@ -1,7 +1,24 @@
 const CryptoWidget = ({ crypto }) => {
+  console.log("CryptoWidget receives:", crypto);
+
   if (!crypto) {
-    return null;
+    return (
+      <div className="widget bitcoin-widget">
+        <h3>Crypto Market</h3>
+        <p>Loading...</p>
+      </div>
+    );
   }
+
+  const formatGBP = (value) => {
+    if (!value) return "£0";
+
+    return new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency: "GBP",
+      maximumFractionDigits: 0
+    }).format(Number(value));
+  };
 
   return (
     <div className="widget bitcoin-widget">
@@ -9,13 +26,14 @@ const CryptoWidget = ({ crypto }) => {
 
       <div className="crypto-row">
         <span>Bitcoin</span>
-        <strong>£{crypto.bitcoin}</strong>
+        <strong>{formatGBP(crypto?.bitcoin)}</strong>
       </div>
 
       <div className="crypto-row">
         <span>Ethereum</span>
-        <strong>£{crypto.ethereum}</strong>
+        <strong>{formatGBP(crypto?.ethereum)}</strong>
       </div>
+
     </div>
   );
 };

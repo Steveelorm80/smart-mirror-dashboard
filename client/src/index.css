@@ -566,3 +566,15 @@ html, body {
   }
 
 }
+
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
