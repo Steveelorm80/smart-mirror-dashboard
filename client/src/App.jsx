@@ -81,19 +81,6 @@ const speak = (text, onEnd) => {
 /* ========================= */
 
 
-useEffect(() => {
-
-  if (!data?.aiInsight) return;
-
-  setShowInsight(true);
-
-  if (audioEnabled) {
-    speak(data.aiInsight, () => {
-      setShowInsight(false);
-    });
-  }
-
-}, [data, audioEnabled]);
 // useEffect(() => {
 
 //   if (!data?.aiInsight) return;
@@ -101,17 +88,30 @@ useEffect(() => {
 //   setShowInsight(true);
 
 //   if (audioEnabled) {
-//     speak(data.aiInsight);
+//     speak(data.aiInsight, () => {
+//       setShowInsight(false);
+//     });
 //   }
 
-//   // keep popup visible longer
-//   const timer = setTimeout(() => {
-//     setShowInsight(false);
-//   }, 20000); // 20 seconds
+// }, [data, audioEnabled]);
+useEffect(() => {
 
-//   return () => clearTimeout(timer);
+  if (!data?.aiInsight) return;
 
-// }, [data]);
+  setShowInsight(true);
+
+  if (audioEnabled) {
+    speak(data.aiInsight);
+  }
+
+  // keep popup visible longer
+  const timer = setTimeout(() => {
+    setShowInsight(false);
+  }, 20000); // 20 seconds
+
+  return () => clearTimeout(timer);
+
+}, [data, audioEnabled]);
 
   /* ========================= */
   /* LOADING SCREEN            */
