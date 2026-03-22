@@ -105,7 +105,7 @@ Detailed system design documentation:
 > Bitcoin is trading at £52,459 today.  
 > Here are your top headlines."
 
----
+
 
 ## ⚙️ Installation & Setup
 
@@ -143,3 +143,8 @@ UI displays and speaks the insight
 ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub!
+
+
+🧑‍💻 Author
+
+Stephen Kwaku Pometsey
