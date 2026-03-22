@@ -24,7 +24,7 @@ Built with a full-stack architecture using React and Node.js, this project simul
 
 This project follows a **client-server architecture** with API aggregation.
 
-
+```bash
 React Frontend
 │
 ▼
@@ -36,25 +36,23 @@ Node.js Express Backend
 └── Joke API
 
 
----
+## 📁 Project Structure
 
-## 📂 Project Structure
-
-
+```bash
 smart-mirror/
 │
-├── client/ # React frontend
-│ ├── components/
-│ └── App.jsx
+├── client/              # React frontend
+│   ├── components/
+│   └── App.jsx
 │
-├── server/ # Node.js backend
-│ ├── controllers/
-│ ├── routes/
-│ └── services/
+├── server/              # Node.js backend
+│   ├── controllers/
+│   ├── routes/
+│   └── services/
 │
-├── docs/ # Project documentation
-│ ├── system-design/
-│ └── diagrams/
+├── docs/                # Project documentation
+│   ├── system-design/
+│   └── diagrams/
 │
 └── README.md
 
