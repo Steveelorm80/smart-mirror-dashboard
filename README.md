@@ -4,6 +4,12 @@ An intelligent smart mirror dashboard that combines real-time data, AI insights,
 
 Built with a full-stack architecture using React and Node.js, this project simulates a real-world smart display system.
 
+## 🌐 Live Demo
+
+👉 https://smart-mirror-dashboard.vercel.app/
+
+Experience the Smart Mirror dashboard in real-time.
+
 ---
 
 ## 🚀 Features
@@ -18,7 +24,18 @@ Built with a full-stack architecture using React and Node.js, this project simul
 - 🔄 Auto-refresh Dashboard (every 5 minutes)  
 - 🌍 Dynamic City Switching  
 
----
+## 📸 Dashboard Preview
+
+### Main Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+### AI Insight Popup
+
+![AI Insight](docs/screenshots/ai-insight.png)
+
+
+
 
 ## 🏗️ System Architecture
 
@@ -67,6 +84,20 @@ Detailed system design documentation:
 
 👉 [View System Design](docs/system-design.md)
 
+## 📐 System Design Diagrams
+
+### 🧩 Use Case Diagram
+![Use Case](docs/diagrams/use-case-diagram.jpg)
+
+### 🏗 Class Diagram
+![Class](docs/diagrams/class-diagram.jpg)
+
+### 🧱 Component Diagram
+![Component](docs/diagrams/component-diagram.png)
+
+### 🔄 Sequence Diagram
+![Sequence](docs/diagrams/sequence-diagram.png)
+
 ## 🧠 AI Briefing Example
 
 > "Good evening Stephen.  
@@ -80,7 +111,6 @@ Detailed system design documentation:
 
 ### Clone Repository
 
-```bash
 git clone https://github.com/steveelorm80/smart-mirror.git
 cd smart-mirror
 
@@ -95,15 +125,14 @@ npm install
 npm run dev
 🌐 Live API
 https://smart-mirror-api.onrender.com/api/dashboard?city=London
+
 🎯 How It Works
 Frontend requests dashboard data
 Backend aggregates multiple APIs
 Data is processed and structured
 AI generates a natural language summary
 UI displays and speaks the insight
-🧑‍💻 Author
 
-Stephen Kwaku Pometsey
 
 💡 Future Improvements
 🎤 Voice commands
