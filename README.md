@@ -41,7 +41,7 @@ Experience the Smart Mirror dashboard in real-time.
 
 This project follows a **client-server architecture** with API aggregation.
 
-```bash
+
 React Frontend
 │
 ▼
@@ -55,7 +55,7 @@ Node.js Express Backend
 
 ## 📁 Project Structure
 
-```bash
+
 smart-mirror/
 │
 ├── client/              # React frontend
@@ -72,10 +72,7 @@ smart-mirror/
 │   └── diagrams/
 │
 └── README.md
-
-
 ---
-
 ## 📘 Documentation
 
 ## 📘 System Design
