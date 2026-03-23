@@ -41,7 +41,7 @@ Experience the Smart Mirror dashboard in real-time.
 
 This project follows a **client-server architecture** with API aggregation.
 
-
+```bash
 React Frontend
 │
 ▼
@@ -51,11 +51,11 @@ Node.js Express Backend
 ├── Crypto API (CoinGecko)
 ├── News API (GNews)
 └── Joke API
-
+```
 
 ## 📁 Project Structure
 
-
+```bash
 smart-mirror/
 │
 ├── client/              # React frontend
@@ -72,7 +72,7 @@ smart-mirror/
 │   └── diagrams/
 │
 └── README.md
----
+```
 ## 📘 Documentation
 
 ## 📘 System Design
@@ -84,10 +84,10 @@ Detailed system design documentation:
 ## 📐 System Design Diagrams
 
 ### 🧩 Use Case Diagram
-![Use Case](docs/diagrams/use-case-diagram.jpg)
+![Use Case](docs/diagrams/use-case-diagram.JPG)
 
 ### 🏗 Class Diagram
-![Class](docs/diagrams/class-diagram.jpg)
+![Class](docs/diagrams/class-diagram.JPG)
 
 ### 🧱 Component Diagram
 ![Component](docs/diagrams/component-diagram.png)
