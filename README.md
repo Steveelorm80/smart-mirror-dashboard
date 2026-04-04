@@ -130,7 +130,7 @@ Data is processed and structured
 AI generates a natural language summary
 UI displays and speaks the insight
 
-
+```bash
 💡 Future Improvements
 🎤 Voice commands
 📊 Crypto trend charts
@@ -138,6 +138,7 @@ UI displays and speaks the insight
 🧍 Face recognition
 📱 Mobile app version
 ⭐ Support
+```
 
 If you like this project, give it a ⭐ on GitHub!
 
