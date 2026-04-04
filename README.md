@@ -90,10 +90,10 @@ Detailed system design documentation:
 ![Class](docs/diagrams/class-diagram.JPG)
 
 ### 🧱 Component Diagram
-![Component](docs/diagrams/component-diagram.png)
+![Component](docs/diagrams/component-diagram.jpg)
 
 ### 🔄 Sequence Diagram
-![Sequence](docs/diagrams/sequence-diagram.png)
+![Sequence](docs/diagrams/sequence-diagram.jpg)
 
 ## 🧠 AI Briefing Example
 
